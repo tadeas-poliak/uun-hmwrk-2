@@ -1,0 +1,16 @@
+{
+    "data":
+    [
+        {
+            "id":1,
+            "name": "Item 1",
+            "system_variables":
+            {
+                "created_on":"2021-07-02T13:06:53.422Z",
+                "modified_on":"2021-07-02T13:06:53.422Z",
+                "revisions":0
+            }
+        }
+    ],
+    "next_id":2
+}
