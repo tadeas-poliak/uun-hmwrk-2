@@ -1,14 +1,14 @@
 const json_db = require("simple-json-db");
 const path = require("path")
 
-const db = new json_db(path.join(__dirname,"..","..","DB","Item.json"));
+const db = new json_db(path.join(__dirname,"..","..","DB","ShoppingList.json"));
 
 //Message Schema
 const {get_response} = require("../Schemas/Response.schema");
 
-class Item_DAO
+class List_item_DAO
 {
-    get_all_items = () =>
+    get_all_lists = () =>
     {
         try
         {
@@ -26,16 +26,18 @@ class Item_DAO
         }
     }
 
-    create_item = (Item) =>
+    create_list = (list) =>
     {
         try
         {
-            let entries_response = this.get_all_items();
+            let entries_response = this.get_all_lists();
+            console.log("creating")
+            console.log(list)
             if(entries_response.code === 200)
             {
-                entries_response.data.result.push(Item);
+                entries_response.data.result.push(list);
                 db.set("data",entries_response.data.result);
-                return get_response(200,"Item created.",Item)
+                return get_response(200,"List was created.",list)
             }
             else
                 return entries_response;
@@ -43,12 +45,12 @@ class Item_DAO
         catch(error)
         {
             if(error)
-                Item = error;
-            throw get_response(500,"Cannot create item.",Item)
+                list = error;
+            throw get_response(500,"Cannot create list.",list)
         }
     }
     
     
 }
 
-module.exports = Item_DAO;
+module.exports = List_item_DAO;

@@ -1,11 +1,10 @@
-module.exports =
-{
-    id: String, //generated unique code,
-    name: String, // item name - mandatory; length is limited to 1-255 characters
-    listItemIdList: Array, // array of item list ids where the item is listed in
-    "system_variables": { 
-        "creared_on": String, // creation timestamp ISO format
-        "modified_on": String, // creation timestamp ISO format
-        "revisions": 0 //revision number 
-      },
+//AJV format
+module.exports =  {
+  type:"object",
+  properties:
+  {
+      id:{type:"string",minLength:32,maxLength:64},
+      name:{type:"string",minLength:1,maxLength:256},
+  },
+  required:["id","name",]
 };

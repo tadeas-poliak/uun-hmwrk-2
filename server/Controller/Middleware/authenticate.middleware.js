@@ -4,27 +4,29 @@ const secretKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUi
 
 // sample user data
 const users = [
-  { id: 1, username: 'testUser', password: 'samplePassword' },
+  { id: 1, user_name: 'testUser', password: 'samplePassword' },
 ];
-
-
 
 // Login route
 exports.login = (req,res) =>
 {
-  const { username, password } = req.body;
+  const { user_name, password } = req.body;
 
-  // Find the user by username and password
-  const user = users.find(u => u.username === username && u.password === password);
+  // Find the user by user_name and password
+  const user = users.find(u => u.user_name === user_name && u.password === password);
 
   if (user) {
     // Generate a JWT token
-    const token = jwt.sign({ id: user.id, username: user.username }, secretKey);
+    const token = jwt.sign({ id: user.id, user_name: user.user_name }, secretKey);
 
     // Set the token in the Authorization header and redirect to the protected endpoint
     res.set('Authorization', `Bearer ${token}`);
-    res.redirect(`/protected?token=${encodeURIComponent(token)}`);
-  } else {
+
+    //res.redirect(`/protected?token=${encodeURIComponent(token)}`);
+    res.json({"token":encodeURIComponent(token)});
+  }
+  else
+  {
     res.status(401).json({ alert: 'Invalid credentials' });
   }
 };
@@ -32,7 +34,7 @@ exports.login = (req,res) =>
 
 
 // Middleware to authenticate the token
-exports.authenticateToken = (req, res, next) => {
+exports.authenticate_token = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = req.query.token || (authHeader && authHeader.split(' ')[1]);
 
@@ -41,11 +43,12 @@ exports.authenticateToken = (req, res, next) => {
   }
 
   jwt.verify(token, secretKey, (err, user) => {
+
     if (err) {
       return res.sendStatus(403);
     }
-
     req.user = user;
+
     next();
   });
 }

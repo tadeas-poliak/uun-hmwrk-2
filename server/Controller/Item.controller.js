@@ -1,31 +1,19 @@
-const item_abl = require("../ABL/Item.ABL")
+const item_abl = require("../ABL/Item.abl")
 
 exports.get_all = (req,res,next)=>
 {
-    res.send(item_abl.get_all_items());
+    item_abl.get_all_items(req,res)
 }
 
 exports.get_by_id = (req,res,next) =>
 {
-    if(req.paramas.id)
-    {
-        let items = item_abl.get_all_items();
-        for(let i in items.data)
-        {
-            if(items[i].id === req.paramas.id)
-            {
-                items.data = items[i];
-                return items;
-            }
-        }
-    }
     
 };
 
-exports.add = (req,res)=>
+exports.create = (req,res,next) =>
 {
-    
-}
+    item_abl.create_item(req,res);
+};
 
 exports.delete = (req,res)=>
 {

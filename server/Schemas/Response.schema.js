@@ -1,6 +1,10 @@
-module.exports = 
+exports.get_response = (code, message, data) =>
 {
-    "description":String,
-    "response_code":Number,
-    "data":Object
+    if(!code || typeof code !== "number")
+        code = 201;
+    if (!message || typeof message !== "string")
+        message = "";
+    if (typeof data === "undefined")
+        data = {};
+    return {code,message,data:{result:data}};
 };

@@ -124,28 +124,21 @@ app.get("/", (req, res) => {
 
 
 
-app.get('/protected', authenticateToken, (req, res) => {
+app.post('/protected', authentication_middleware.authenticate_token, (req, res) => {
     // Accessible only to authenticated users
     res.json({ message: 'Protected resource accessed' });
   });
 
 app.post('/login', authentication_middleware.login);
 
-app.post("shoppingList/create",authentication_middleware.authenticateToken, )//schopping list controller create
-app.post("shoppingList/update/:id")
-app.get("shoppingList/getAll")
-app.get("shoppingList/get/:id")
-app.post("shoppingList/delete/:id")
-app.post("shoppingList/addMember/:id")
-app.post("shoppingList/item/add/:id")
-app.post("shoppingList/item/getAll")
 
-app.post("item/add",authentication_middleware.authenticateToken,item_controller.add)
-app.post("item/get/:id",authentication_middleware.authenticateToken,item_controller.add)
-app.post("item/getAll",authentication_middleware.authenticateToken,item_controller.get_all)
-app.post("item/delete/:id",authentication_middleware.authenticateToken,item_controller.delete)
+//Getting Item router
+const item_router = require("./Router/Item.router");
+app.use("/item",item_router);
 
-
+//Getting Shoppin list router
+const list_item_router = require("./Router/ListItem.router");
+app.use("/shoppingList",list_item_router);
 
 app.listen(8080, "localhost", () => {
     console.log("Server bezi " + "localhost" + ":" + 8080);

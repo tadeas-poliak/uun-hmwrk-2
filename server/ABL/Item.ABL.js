@@ -1,33 +1,59 @@
-const ajv = require("ajv");
+const Ajv = require("ajv");
 const uuid = require("uuid");
 const item_schema = require("../Schemas/Product.Schemas/Item.schema");
 
-const json_validator = new ajv();
+const ajv = new Ajv();
 
-const response = require("../Schemas/Response.schema")
+const {get_response} = require("../Schemas/Response.schema")
 //DAO
-const itemdao = require("../DAO/Item.DAO");
+const itemdao = require("../DAO/Item.dao");
 const item_dao = new itemdao();
 
 module.exports = 
 {
-    create_item: (Item) =>
+    create_item: (req,res) =>
     {
-        let incoming_data = Item;
-        incoming_data.id = uuid.v4();
+        const Item = req.body;
 
-        //checking if json has corresponding schema...
-        if(json_validator.compile(item_schema).validate(incoming_data))
+        try
         {
-            //Calling DAO method
-            return item_dao.create_item(incoming_data);
+            if(!Item.id)
+                Item.id = uuid.v4();
+            //checking if json has corresponding schema...
+            if(ajv.validate(item_schema,Item))
+            {
+                //Calling DAO method
+                let response = item_dao.create_item(Item) 
+                res.status(response.code)
+                res.send(response);
+            }
+            else
+            {
+                let response = get_response(500,"Schema of item is not valid",{});
+                res.status(response.code);
+                res.send(response)
+            }
         }
-        response.description= "Item did not have corrent JSON schema."
-        response.response_code = 501
-        return response;
+        catch(error)
+        {
+            if(error.code)
+                res.status(error.code)
+            res.send(error)
+        }
     },
-    get_all_items: () =>
+    get_all_items: (req,res) =>
     {
-        return item_dao.get_all_items();
+        try
+        {
+            let response = item_dao.get_all_items();
+            res.status(response.code);
+            res.send(response);
+        }
+        catch(error)
+        {
+            if(error.code)
+                res.status(error.code);
+            res.send(error);
+        }
     }
 }

@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "name": "Testing name",
+            "owner": "casdas1d45as1d5s1a6dsa65dsa1",
+            "id": "1c18d88e-39ee-4151-ac74-d381c3fcac09",
+            "member_id_list": [],
+            "archived_user_id_list": [],
+            "item_id_list": []
+        },
+        {
+            "name": "Testing name",
+            "owner": "casdas1d45as1d5s1a6dsa65dsa1",
+            "id": "4f0fe9f6-dd74-42eb-835b-3084144a3215",
+            "member_id_list": [],
+            "archived_user_id_list": [],
+            "item_id_list": []
+        }
+    ]
+}
