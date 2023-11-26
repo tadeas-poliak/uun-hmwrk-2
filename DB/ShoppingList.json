@@ -3,18 +3,34 @@
         {
             "name": "Testing name",
             "owner": "casdas1d45as1d5s1a6dsa65dsa1",
-            "id": "1c18d88e-39ee-4151-ac74-d381c3fcac09",
+            "id": "4f0fe9f6-dd74-42eb-835b-3084144a3215",
+            "member_id_list": [
+                "casdas1d45as1d5s1a6dsa65dsa1",
+                "casdas1d45as1d5s1a6dsa65dsa1",
+                "casdas1d45as1d5s1a6dsa65dsa1"
+            ],
+            "archived_user_id_list": [],
+            "item_id_list": [
+                "c0bc62dd-e97f-4958-8532-fd7cf09c8f24",
+                "c0bc62dd-e97f-4958-8532-fd7cf09c8f24",
+                "c0bc62dd-e97f-4958-8532-fd7cf09c8f24"
+            ]
+        },
+        {
+            "name": "Updated Testing Shopping List",
+            "owner": "das15d16asf161dddddddddddddddddd",
+            "id": "83eec15b-797c-4b35-9f9f-948c10de3680",
             "member_id_list": [],
             "archived_user_id_list": [],
             "item_id_list": []
         },
         {
-            "name": "Testing name",
-            "owner": "casdas1d45as1d5s1a6dsa65dsa1",
-            "id": "4f0fe9f6-dd74-42eb-835b-3084144a3215",
+            "name": "Testing Shopping List",
+            "id": "d6745967-40cd-4b32-a7f0-890526058ca2",
             "member_id_list": [],
             "archived_user_id_list": [],
-            "item_id_list": []
+            "item_id_list": [],
+            "owner": "3e91faed-7456-4c1d-97a5-8440c367a0de"
         }
     ]
 }

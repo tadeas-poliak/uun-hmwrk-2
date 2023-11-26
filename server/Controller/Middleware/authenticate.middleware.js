@@ -4,7 +4,7 @@ const secretKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUi
 
 // sample user data
 const users = [
-  { id: 1, user_name: 'testUser', password: 'samplePassword' },
+  { id: "3e91faed-7456-4c1d-97a5-8440c367a0de", user_name: 'testUser', password: 'samplePassword' },
 ];
 
 // Login route
