@@ -1,0 +1,23 @@
+{
+    "header":
+    {
+        "title":"Übersicht über die Einkaufsliste",
+        "button":"Einkaufsliste hinzufügen",
+        "language_button":"Sprachwechsel",
+        "settings_button":"Einstellungen",
+        "light_dark_mode":"Hell-/Dunkelmodus"
+    },
+
+    "button":
+    {
+        "edit":"Bearbeiten",
+        "delete":"Löschen"
+    },
+
+    "form":
+    {
+        "name":"Benennung",
+        "description":"Beschreibung",
+        "submit":"Einreichen"
+    }
+}

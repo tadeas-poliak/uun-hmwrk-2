@@ -1,7 +1,7 @@
 
 interface Shopping_list_props
 {
-    id:string,
+    id?:string,
     name:string,
     owner:string,
     member_id_list:Array<string>,

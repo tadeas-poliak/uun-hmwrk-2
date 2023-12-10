@@ -1,0 +1,38 @@
+{
+    "header":
+    {
+        "title":"Shopping List Overview",
+        "button":"Add shopping list",
+        "language_button":"Change language",
+        "settings_button":"Settings",
+        "light_dark_mode":"Light/Dark mode"
+    },
+
+    "button":
+    {
+        "edit":"Edit",
+        "delete":"Remove",
+        "add":"Add",
+        "submit":"Submit"
+    },
+
+    "input":
+    {
+        "list":
+        {
+            "heading_1":"Name",
+            "heading_2":"Action",
+            "cant_remove":"Can not be removed",
+            "cant_add":"Can not be added",
+            "search_for_component":"Search for item"
+        }
+    },
+
+    "form":
+    {
+        "name":"Name",
+        "description":"Description",
+        "items":"Items",
+        "submit":"Submit"
+    }
+}

@@ -33,11 +33,12 @@ module.exports =
                 item_list.item_id_list = []
 
             //Setting user
-            if(!req.user)
-                return res.send(get_response(400,"User is not authenticated",{}))
+            //if(!req.user)
+                //return res.send(get_response(400,"User is not authenticated",{}))
 
-            console.log(req.user)
-            item_list.owner = req.user.id
+            console.log(item_list)
+            item_list.owner = "";//(req.user.id)?req.user.id:"";
+            console.log("here")
             //checking if json has corresponding schema...
             if(ajv.validate(list_schema,item_list) === true)
             {
@@ -101,6 +102,7 @@ module.exports =
     update_list: (req,res) =>
     {
         const list = req.body;
+
         try
         {
             //checking if json has corresponding schema...

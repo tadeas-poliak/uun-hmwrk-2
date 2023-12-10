@@ -1,7 +1,7 @@
 
 interface Item_props
 {
-    id:string,
+    id?:string,
     name:string
 }
 

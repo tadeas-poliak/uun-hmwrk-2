@@ -7,8 +7,11 @@ module.exports = {
     extend: {
       colors: {
         'paper-yellow':'#F1E6CF',
-        'dark-red':"#6F3D3D",
-        'body-red':"#9F4343",
+        'paper-darker-yellow':'#EED5A4',
+        'dark-red':"#602200",
+        "darker-red":"#451D1D",
+        'body-red':"#A82E06",
+        'body-darker-red':"#632E06",
         'button-default':"#DA7035",
         'button-edit':"#AA8F04",
         'button-delete':"#DA3535",

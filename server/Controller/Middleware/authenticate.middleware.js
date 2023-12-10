@@ -35,7 +35,7 @@ exports.login = (req,res) =>
 
 // Middleware to authenticate the token
 exports.authenticate_token = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
+  /*const authHeader = req.headers['authorization'];
   const token = req.query.token || (authHeader && authHeader.split(' ')[1]);
 
   if (token == null) {
@@ -50,5 +50,6 @@ exports.authenticate_token = (req, res, next) => {
     req.user = user;
 
     next();
-  });
+  });*/
+  next();
 }

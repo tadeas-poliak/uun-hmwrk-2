@@ -1,0 +1,38 @@
+{
+    "header":
+    {
+        "title":"Přehled nákupních seznamů",
+        "button":"Přidat nákupní seznam",
+        "language_button":"Změna jazyka",
+        "settings_button":"Nastavení",
+        "light_dark_mode":"Světlý/tmavý režim"
+    },
+
+    "button":
+    {
+        "edit":"Upravit",
+        "delete":"Vymazat",
+        "add":"Přidat",
+        "submit":"Potvrdit"
+    },
+
+    "input":
+    {
+        "list":
+        {
+            "heading_1":"Název",
+            "heading_2":"Akce",
+            "cant_remove":"Nemůže být odebrán",
+            "cant_add":"Nemůže být přidán",
+            "search_for_component":"Vyhledat položku"
+        }
+    },
+
+    "form":
+    {
+        "name":"Název",
+        "description":"Popis",
+        "items":"Položky",
+        "submit":"Potvrdit"
+    }
+}
