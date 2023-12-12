@@ -22,7 +22,7 @@ const Shopping_list_card_component = (shopping_list_card:Shopping_list_card_prop
    
 
     return (
-        <div className="dark:bg-gray-900 dark:text-white bg-paper-yellow grid grid-cols-1 rounded p-2 shadow-sm">
+        <div className="dark:bg-paper-darker-yellow dark:text-white bg-paper-yellow grid grid-cols-1 rounded p-2 shadow-lg">
             <div className="flex justify-center">
                 <h3 className="font-bold">{shopping_list.name}</h3>
             </div>

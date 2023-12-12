@@ -34,16 +34,16 @@ const List_input_component = (list_input: List_input_props) => {
 
     return (
         <div>
-            <div>
+            <div className="">
                 <TextInputComponent on_change_event={(e) => { search_for_item_handler(e) }} placeHolder={t("input.list.search_for_component")} />
             </div>
             <div className="max-h-[350px] min-h-[150px] lg:w-[650px] overflow-y-scroll">
-                <table className="p-4 mt-4 w-[100%] border-spacing-4 border-separate">
+                <table className="p-4 mt-4 w-[100%] border-spacing-4 border-collapse">
                     <tr>
-                        <th>
+                        <th className="border-b-2 border-black">
                             {t("input.list.heading_1")}
                         </th>
-                        <th colSpan={2}>
+                        <th className="border-b-2 border-black" colSpan={2}>
                             {t("input.list.heading_2")}
                         </th>
                     </tr>
@@ -52,25 +52,29 @@ const List_input_component = (list_input: List_input_props) => {
                             items.map((item) => {
                                 return (
 
-                                    <tr>
-                                        <td className="lg:p-3 sm:p-2">
+                                    <tr className="p-2   border-black">
+                                        <td className="p-2">
                                             {item.name}
                                         </td>
                                         {
                                             (item.is_addable === true || item.is_addable === undefined) ?
-                                                <td className="lg:p-3 sm:p-2">
-                                                    <ButtonComponent label={t("button.add")} on_click_handler={() => { if (list_input.add_item_handler) list_input.add_item_handler(item) }} type="Submit"></ButtonComponent>
+                                                <td className="p-1">
+                                                    <div className="lg:w-[75%]  flex justify-center">
+                                                        <ButtonComponent label={t("button.add")} on_click_handler={() => { if (list_input.add_item_handler) list_input.add_item_handler(item) }} type="Submit"></ButtonComponent>
+                                                    </div>
                                                 </td> :
-                                                <td>
+                                                <td className="">
                                                     <p className="font-bold text-center">{t("input.list.cant_add")}</p>
                                                 </td>
                                         }
                                         {
                                             (item.is_removable === true || item.is_removable === undefined) ?
-                                                <td className="lg:p-3 sm:p-2">
-                                                    <ButtonComponent label={t("button.delete")} on_click_handler={() => { if (list_input.remove_item_handler) list_input.remove_item_handler(item) }} type="Delete" icon_before={undefined}></ButtonComponent>
+                                                <td className="">
+                                                    <div className="lg:w-[75%] flex justify-center">
+                                                        <ButtonComponent label={t("button.delete")} on_click_handler={() => { if (list_input.remove_item_handler) list_input.remove_item_handler(item) }} type="Delete" icon_before={undefined}></ButtonComponent>
+                                                    </div>
                                                 </td> :  
-                                                <td>
+                                                <td className="">
                                                     <p className="font-bold text-center">{t("input.list.cant_remove")}</p>
                                                 </td>
                                         }

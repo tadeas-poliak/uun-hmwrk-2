@@ -18,22 +18,21 @@ import { useNavigate } from "react-router-dom";
 
 
 const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_form_props) => {
-    const [loading_status, set_loading_status] = useState<Loading_status_type>("Loading");
+    const [loading_status, set_loading_status] = useState<Loading_status_type>("Loaded");
     const [shopping_list, set_shopping_list] = useState<Shopping_list_card_props>({ item_list: [], archived_user_list: [], member_list: [], name: "", owner: { id: "", name: "" } });
     const [all_items, set_all_items] = useState<Array<Item_props>>([]);
 
     const navigate = useNavigate();
 
-    useEffect(() => {
+
+    const fetch_data = () => {
         //Fetching data
         const get_list_data = async () => {
-
-            //Creating new list
 
             //Editing list
             try {
                 if (shopping_list_form.mode === "Edit") {
-
+                    set_loading_status("Loading");
 
                     const data = (
                         await fetch("/shoppingList/get/" + shopping_list_form.shopping_list_id, { "method": "GET" })
@@ -83,16 +82,21 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                 const items_data = await (
                     await fetch(`/item/getAll`, { "method": "GET" })
                 ).json();
+                console.log(items_data)
                 if (items_data.code === 200) {
                     set_all_items(items_data.data.result);
+                    set_loading_status("Loaded")
                 }
-                set_loading_status("Loaded")
             }
             catch (error) {
                 set_loading_status("Error");
             }
         };
         get_list_data();
+    }
+    useEffect(() => {
+
+        fetch_data();
     }, [shopping_list_form]);
 
     const submit_form_handler = async (new_shopping_list_form: Shopping_list_card_props) => {
@@ -143,7 +147,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                         closeOnClick: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "light"
+                        theme: "dark"
                     });
                 }
                 else {
@@ -154,7 +158,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                         closeOnClick: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "light",
+                        theme: "dark",
 
                     });
                 }
@@ -170,7 +174,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                             body: JSON.stringify(new_shopping_list)
                         })
                 ).json();
-                console.log(create_shopping_list);
+
                 if (create_shopping_list.code === 200) {
                     set_loading_status("Loaded");
                     toast("Shopping List Created", {
@@ -180,7 +184,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                         closeOnClick: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "light",
+                        theme: "dark",
                     });
                 }
                 else {
@@ -191,7 +195,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                         closeOnClick: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "light",
+                        theme: "dark",
                     });
                     set_loading_status("Error");
                 }
@@ -206,10 +210,9 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
         <>
             {
                 (loading_status === "Loading") ? <LoadingComponent></LoadingComponent> :
-                    ((loading_status === "Loaded") ? <ShoppingListFormComponent all_items={all_items} shopping_list={shopping_list!} submit_form_handler={submit_form_handler} ></ShoppingListFormComponent>
+                    ((loading_status === "Loaded") ? <ShoppingListFormComponent all_items={all_items} shopping_list={shopping_list!} submit_form_handler={submit_form_handler} refetch_data={fetch_data}></ShoppingListFormComponent>
                         : <ErrorComponent message="Something went wrong when managing shopping list"></ErrorComponent>)
             }
-            <ToastContainer />
         </>
     );
 

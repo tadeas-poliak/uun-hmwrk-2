@@ -24,8 +24,14 @@
             "heading_2":"Action",
             "cant_remove":"Can not be removed",
             "cant_add":"Can not be added",
-            "search_for_component":"Search for item"
+            "search_for_component":"Search for item",
+            "no_item":"Could not find any item"
         }
+    },
+
+    "list_grid":
+    {
+        "no_item":"No shopping lists exists. Don't wait and create one."
     },
 
     "form":
@@ -33,6 +39,7 @@
         "name":"Name",
         "description":"Description",
         "items":"Items",
-        "submit":"Submit"
+        "submit":"Submit",
+        "create_item":"Create item"
     }
 }

@@ -6,13 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'paper-yellow':'#F1E6CF',
-        'paper-darker-yellow':'#EED5A4',
+        'paper-yellow':'#f3dfc1',
+        'paper-darker-yellow':'#B8A991',
         'dark-red':"#602200",
         "darker-red":"#451D1D",
         'body-red':"#A82E06",
-        'body-darker-red':"#632E06",
+        'body-darker-red':"#462104",
         'button-default':"#DA7035",
+        'button-dark-default':"#81411F",
         'button-edit':"#AA8F04",
         'button-delete':"#DA3535",
         'button-submit':"#64B216",

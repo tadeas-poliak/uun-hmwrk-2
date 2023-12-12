@@ -24,15 +24,23 @@
             "heading_2":"Akce",
             "cant_remove":"Nemůže být odebrán",
             "cant_add":"Nemůže být přidán",
-            "search_for_component":"Vyhledat položku"
+            "search_for_component":"Vyhledat položku",
+            "no_item":"Nenašli jsme žádnou položku"
         }
+    },
+
+    "list_grid":
+    {
+        "no_item":"Nenašli jsme žádný nákupní list. Na nic nečekejte a jeden vytvořte."
     },
 
     "form":
     {
         "name":"Název",
         "description":"Popis",
+        "submit":"Potvrdit",
         "items":"Položky",
-        "submit":"Potvrdit"
+        "create_item":"Vytvořit položku",
+        "close":"Zavřít"
     }
 }

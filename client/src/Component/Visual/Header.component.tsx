@@ -14,9 +14,9 @@ const Header_component = () =>
 
     const navigate = useNavigate();
     return (
-        <div className="bg-dark-red p-10 lg:flex justify-between md:grid md:grid-cols-1">
+        <div className="dark:bg-darker-red bg-dark-red p-10 lg:flex justify-between md:block shadow-xl">
             <h1 className="text-white font-bold text-2xl drop-shadow-md"><a href="/">{t("header.title")} </a></h1>
-            <div className="flex justify-evenly">
+            <div className="flex justify-evenly mt-5 lg:mt-0">
                 <div className="pr-4">
                     <DropDownButtonComponent 
                     label={t("header.settings_button")}

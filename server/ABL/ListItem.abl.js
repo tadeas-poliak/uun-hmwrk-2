@@ -17,7 +17,7 @@ module.exports =
     create_list: (req,res) =>
     {
         const item_list = req.body;
-        console.log(req.body)
+
         try
         {
             if(!item_list.id)
@@ -36,9 +36,7 @@ module.exports =
             //if(!req.user)
                 //return res.send(get_response(400,"User is not authenticated",{}))
 
-            console.log(item_list)
             item_list.owner = "";//(req.user.id)?req.user.id:"";
-            console.log("here")
             //checking if json has corresponding schema...
             if(ajv.validate(list_schema,item_list) === true)
             {
@@ -110,7 +108,6 @@ module.exports =
             {
                 //Calling DAO method
                 let response = list_item_dao.update_list(list) 
-                console.log(response)
                 res.status(response.code)
                 res.send(response);
             }
@@ -222,7 +219,6 @@ module.exports =
             //Error out of DAO
             else
             {
-                console.log(dao_error_response)
                 let response = get_response(500,"Unexpected error",dao_error_response.message)
                 res.status(500)
                 res.send(response)    
@@ -260,7 +256,6 @@ module.exports =
             //Error out of DAO
             else
             {
-                console.log(dao_error_response)
                 let response = get_response(500,"Unexpected error",dao_error_response.message)
                 res.status(500)
                 res.send(response)    
@@ -320,7 +315,6 @@ module.exports =
             //Error out of DAO
             else
             {
-                console.log(dao_error_response)
                 let response = get_response(500,"Unexpected error",dao_error_response.message)
                 res.status(500)
                 res.send(response)    
@@ -358,7 +352,6 @@ module.exports =
             //Error out of DAO
             else
             {
-                console.log(dao_error_response)
                 let response = get_response(500,"Unexpected error",dao_error_response.message)
                 res.status(500)
                 res.send(response)    

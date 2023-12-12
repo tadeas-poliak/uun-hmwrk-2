@@ -10,7 +10,7 @@ const Button_component = (button:Button_props) =>
 
                  
     return (
-            <div className={"flex justify-center cursor-pointer p-2 pl-6 pr-6 text-white drop-shadow-lg rounded-md "+color+
+            <div className={"flex justify-center cursor-pointer lg:p-2 lg:pl-6 lg:pr-6 p-1  text-white drop-shadow-lg rounded-md "+color+
                             " hover:scale-[1.02] transition-[250ms] drop-shadow-lg"} onClick={button.on_click_handler}>
                 <div className="flex justify-center">
                     {(button.icon_before)?<IconComponent path={button.icon_before.path} width_px={button.icon_before.width_px}></IconComponent>:null}

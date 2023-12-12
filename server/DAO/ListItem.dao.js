@@ -92,8 +92,6 @@ class List_list_DAO {
     create_list = (list) => {
         try {
             let entries_response = this.get_all_lists();
-            console.log("creating")
-            console.log(list)
             if (entries_response.code === 200) {
                 entries_response.data.result.push(list);
                 db.set("data", entries_response.data.result);

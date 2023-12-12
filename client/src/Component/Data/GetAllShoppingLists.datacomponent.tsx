@@ -112,14 +112,15 @@ const Get_all_shopping_lists_data_component = () => {
     
             if (delete_shopping_list.code === 200) {
 
-                toast.success("Shopping List Deleted", {
+                console.log("Deleted")
+                toast.success("Shopping List was Deleted", {
                     position: "top-center",
-                    autoClose: 2500,
+                    autoClose: 4000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     draggable: true,
                     progress: undefined,
-                    theme: "light",
+                    theme: "dark",
                 });
                 
                 //Removing locally
@@ -128,14 +129,14 @@ const Get_all_shopping_lists_data_component = () => {
                 )
             }
             else {
-                toast.success("Shopping List WAS NOT Deleted", {
+                toast.error("Shopping List WAS NOT Deleted", {
                     position: "top-center",
-                    autoClose: 5000,
+                    autoClose: 4000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     draggable: true,
                     progress: undefined,
-                    theme: "light",
+                    theme: "dark",
                 });
             }
         }
@@ -147,7 +148,7 @@ const Get_all_shopping_lists_data_component = () => {
                 closeOnClick: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
+                theme: "dark",
             });
         }
     }
