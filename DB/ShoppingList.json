@@ -1,3 +1,47 @@
 {
-    "data": []
+    "data": [
+        {
+            "name": "Shopping List 1",
+            "owner": "",
+            "item_id_list": [
+                "4dc75572-8857-46b8-85a5-a851ab6cca5f",
+                "b146d510-2328-4a7c-a172-ca3edcbccf2b"
+            ],
+            "archived_user_id_list": [],
+            "member_id_list": [],
+            "id": "dc43bef0-9123-4d5b-9ed1-a1f2f8f93d18"
+        },
+        {
+            "name": "Unit test item",
+            "owner": "",
+            "member_id_list": [],
+            "archived_user_id_list": [],
+            "item_id_list": [],
+            "id": "bd864f52-1bdb-421b-9c16-8b09585c2054"
+        },
+        {
+            "name": "Unit test item",
+            "owner": "",
+            "member_id_list": [],
+            "archived_user_id_list": [],
+            "item_id_list": [],
+            "id": "c4ecd59a-603c-43f3-beb5-d3cfea0eac98"
+        },
+        {
+            "name": "Unit test item",
+            "owner": "",
+            "member_id_list": [],
+            "archived_user_id_list": [],
+            "item_id_list": [],
+            "id": "25fe0af9-8bf0-4dd3-82c1-4fd0e6ac8175"
+        },
+        {
+            "name": "Unit test item",
+            "owner": "",
+            "member_id_list": [],
+            "archived_user_id_list": [],
+            "item_id_list": [],
+            "id": "8da94d85-5346-4827-8ca3-2a9b09b31897"
+        }
+    ]
 }

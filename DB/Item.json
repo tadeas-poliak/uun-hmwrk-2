@@ -1,56 +1,28 @@
 {
     "data": [
         {
-            "name": "This is testing item 1",
-            "id": "c0bc62dd-e97f-4958-8532-fd7cf09c8f24"
+            "name": "Rohlík",
+            "id": "4dc75572-8857-46b8-85a5-a851ab6cca5f"
         },
         {
-            "name": "This is testing item 3",
-            "id": "6cc2a4c5-1ff1-4ebb-92c8-7a3066f85c00"
+            "name": "Chleba",
+            "id": "b146d510-2328-4a7c-a172-ca3edcbccf2b"
         },
         {
-            "name": "test",
-            "id": "2baf3510-8087-41d8-91e3-c3eaef1325e9"
+            "name": "Máslo",
+            "id": "a460d957-15bf-4272-b0aa-56f0fbfb59d4"
         },
         {
-            "name": "test",
-            "id": "96c4737a-d346-490f-bbd9-d70eeb77f423"
+            "name": "Vánočka",
+            "id": "0230e0cc-86ca-49b0-87c6-44bf4f811789"
         },
         {
-            "name": "Next Item",
-            "id": "c6af7d3d-df6d-4426-8f2f-b34aa9da8f69"
-        },
-        {
-            "name": "hello",
-            "id": "c366dac4-935a-49d7-bada-c6d612109d88"
-        },
-        {
-            "name": "ju",
-            "id": "5d9e19f9-68bc-49e5-9fe1-516e40dd5d0e"
-        },
-        {
-            "name": "test",
-            "id": "5a8ae360-dd2d-4e4d-8289-06055052f92c"
-        },
-        {
-            "name": "next",
-            "id": "1360461e-8e7f-4a2d-a8ff-6deaca9365de"
-        },
-        {
-            "name": "another one",
-            "id": "62e089e1-4fbd-4e15-bb07-8be9111c88ec"
-        },
-        {
-            "name": "ju",
-            "id": "6b3ccc9d-384e-4f30-bfac-751e9d31ed1b"
-        },
-        {
-            "name": "vi",
-            "id": "f2beadfb-d7c2-4ee3-aea8-8a5f3e1bf94b"
-        },
-        {
-            "name": "hello",
-            "id": "dc362059-b94c-4bd0-ae82-1e17021cdc01"
+            "name": "Unit test item",
+            "owner": 12,
+            "member_id_list": [],
+            "archived_user_id_list": [],
+            "item_id_list": [],
+            "id": "e9c05391-8822-4662-891d-24db4441b0d4"
         }
     ]
 }

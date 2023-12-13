@@ -35,7 +35,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                     set_loading_status("Loading");
 
                     const data = (
-                        await fetch("/shoppingList/get/" + shopping_list_form.shopping_list_id, { "method": "GET" })
+                        await fetch("/api/shoppingList/get/" + shopping_list_form.shopping_list_id, { "method": "GET" })
                     );
                     let result = await data.json();
                     if (result) {
@@ -54,7 +54,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
                             //Getting items
                             for (let item_id in shopping_list.item_id_list) {
                                 const item_data = await (
-                                    await fetch(`/item/get/${shopping_list.item_id_list[item_id]}`, { "method": "GET" })
+                                    await fetch(`/api/item/get/${shopping_list.item_id_list[item_id]}`, { "method": "GET" })
                                 ).json();
                                 if (item_data.code === 200) {
                                     shopping_list_card.item_list.push(item_data.data.result)
@@ -80,7 +80,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
 
                 //Getting All Items...
                 const items_data = await (
-                    await fetch(`/item/getAll`, { "method": "GET" })
+                    await fetch(`/api/item/getAll`, { "method": "GET" })
                 ).json();
                 console.log(items_data)
                 if (items_data.code === 200) {
@@ -128,7 +128,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
 
             if (shopping_list_form.mode === "Edit") {
                 const update_shopping_list = await (
-                    await fetch("/shoppingList/update",
+                    await fetch("/api/shoppingList/update",
                         {
                             "method": "POST",
                             headers: {
@@ -165,7 +165,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
             }
             else if (shopping_list_form.mode === "Create") {
                 const create_shopping_list = await (
-                    await fetch("/shoppingList/create",
+                    await fetch("/api/shoppingList/create",
                         {
                             "method": "POST",
                             headers: {
@@ -202,6 +202,7 @@ const Shopping_list_form_data_component = (shopping_list_form: Shopping_list_for
             }
         }
         catch (error) {
+            console.log(error)
             set_loading_status("Error");
         }
     }

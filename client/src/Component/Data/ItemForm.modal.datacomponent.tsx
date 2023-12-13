@@ -35,7 +35,7 @@ const Item_form_modal_data_component = ({is_open,show_modal_handler,item}: Item_
             try {
                 //creating item
                 const items_data = await (
-                    await fetch(`/item/create`,
+                    await fetch(`/api/item/create`,
                      {       "method": "POST",
                      headers: {
                          "Content-Type": "application/json",

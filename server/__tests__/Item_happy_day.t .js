@@ -5,7 +5,7 @@ const app = require("../app");
 describe("Test List Item", () => {
   test("Respond to get all items", done => {
     request(app)
-      .get("/item/getAll")
+      .get("/api/item/getAll")
       .then(response => {
         expect(response.statusCode).toBe(200);
         let obtained_data = JSON.parse(response.res.text);
@@ -21,14 +21,10 @@ describe("Test List Item", () => {
   test("Respond on creating new list", done => {
     let payload =
     {
-      name: "Unit test item",
-      owner: "",
-      member_id_list: [],
-      archived_user_id_list: [],
-      item_id_list: []
+      name: "Unit test item"
     }
     request(app)
-      .post("/item/create",)
+      .post("/api/item/create",)
       .send(payload)
       .set('Content-Type', 'application/json')
       .set('Accept', 'application/json')
@@ -47,7 +43,7 @@ describe("Test List Item", () => {
   //Getting by id
   test("Respond to get item by id", done => {
     request(app)
-      .get("/item/get/" + new_item_id)
+      .get("/api/item/get/" + new_item_id)
       .then(response => {
         expect(response.statusCode).toBe(200);
         let obtained_data = JSON.parse(response.res.text);
@@ -69,7 +65,7 @@ describe("Test List Item", () => {
       name: "Unit test item updated",
     }
     request(app)
-      .post("/item/update",)
+      .post("/api/item/update",)
       .send(payload)
       .set('Content-Type', 'application/json')
       .set('Accept', 'application/json')
@@ -84,7 +80,7 @@ describe("Test List Item", () => {
   //Deleting
   test("Respond on deleting item", done => {
     request(app)
-      .post("/item/delete/" + new_item_id,)
+      .post("/api/item/delete/" + new_item_id,)
       .set('Content-Type', 'application/json')
       .set('Accept', 'application/json')
       .then(response => {

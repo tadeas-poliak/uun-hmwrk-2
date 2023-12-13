@@ -6,7 +6,7 @@ describe("Test List Item", () => {
     //Getting all
     test("Respond to get all list", done => {
         request(app)
-            .get("/shoppingList/getAll")
+            .get("/api/shoppingList/getAll")
             .then(response => {
                 expect(response.statusCode).toBe(200);
                 let obtained_data = JSON.parse(response.res.text);
@@ -29,7 +29,7 @@ describe("Test List Item", () => {
             item_id_list: []
         }
         request(app)
-            .post("/shoppingList/create",)
+            .post("/api/shoppingList/create",)
             .send(payload)
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
@@ -48,7 +48,7 @@ describe("Test List Item", () => {
     //Getting by id
     test("Respond to get list by id", done => {
         request(app)
-            .get("/shoppingList/get/"+new_list_id)
+            .get("/api/shoppingList/get/"+new_list_id)
             .then(response => {
                 expect(response.statusCode).toBe(200);
                 let obtained_data = JSON.parse(response.res.text);
@@ -77,7 +77,7 @@ describe("Test List Item", () => {
             item_id_list: []
         }
         request(app)
-            .post("/shoppingList/update",)
+            .post("/api/shoppingList/update",)
             .send(payload)
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
@@ -92,7 +92,7 @@ describe("Test List Item", () => {
     //Deleting
     test("Respond on deleting list", done => {
         request(app)
-            .post("/shoppingList/delete/" + new_list_id,)
+            .post("/api/shoppingList/delete/" + new_list_id,)
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
             .then(response => {

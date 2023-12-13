@@ -23,9 +23,11 @@ const Get_all_shopping_lists_data_component = () => {
             try {
 
                 const data = (
-                    await fetch("/shoppingList/getAll", { "method": "GET" })
+                    await fetch("/api/shoppingList/getAll", { "method": "GET"})
                 );
+                console.log(await data)
                 let result = await data.json();
+                console.log(result)
                 if (result) {
                     if (result.code !== 500) {
                         //Getting items
@@ -44,7 +46,7 @@ const Get_all_shopping_lists_data_component = () => {
 
                             for (let item_id in shopping_lists[list].item_id_list) {
                                 const item_data = await (
-                                    await fetch(`/item/get/${shopping_lists[list].item_id_list[item_id]}`, { "method": "GET" })
+                                    await fetch(`/api/item/get/${shopping_lists[list].item_id_list[item_id]}`, { "method": "GET" })
                                 ).json();
                                 if (item_data.code === 200) {
                                     shopping_list_card.item_list.push(item_data.data.result)
@@ -67,6 +69,7 @@ const Get_all_shopping_lists_data_component = () => {
             }
             catch (error) {
                 set_loading_status("Error");
+                console.log(error)
             }
 
 
@@ -100,7 +103,7 @@ const Get_all_shopping_lists_data_component = () => {
         try {
 
             const delete_shopping_list = await (
-                await fetch("/shoppingList/delete/" + deleting_shopping_list.id,
+                await fetch("/api/shoppingList/delete/" + deleting_shopping_list.id,
                     {
                         "method": "POST",
                         headers: {
